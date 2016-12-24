@@ -1,0 +1,16 @@
+<div class="btn-group">
+  <button i18n class="btn"
+    [class.btn-default]="!isLocale('en')"
+    [class.btn-primary]="isLocale('en')"
+    (click)="setLocale('en')">English</button>
+  <button i18n class="btn"
+    [class.btn-default]="!isLocale('de')"
+    [class.btn-primary]="isLocale('de')"
+    (click)="setLocale('de')">German</button>
+  <button i18n class="btn"
+    [class.btn-default]="!isLocale('ru')"
+    [class.btn-primary]="isLocale('ru')"
+    (click)="setLocale('ru')">Russian</button>
+</div>
+<h1 i18n>Hello, how are you?</h1>
+

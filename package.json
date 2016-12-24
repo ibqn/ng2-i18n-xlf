@@ -1,0 +1,46 @@
+{
+  "name": "ng2-i18n-xlf",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server -c bs-config.js\" ",
+    "build:aot": "for l in 'en' 'de' 'ru'; do ngc --i18nFile=./locale/messages.$l.xlf --locale=$l --i18nFormat=xlf -p tsconfig-aot.json && rollup -c rollup.config.js && node copy-dist-files.js && mv aot/dist/build.js aot/dist/build.$l.js; done",
+    "lite:aot": "lite-server -c aot/bs-config.js",
+    "lite": "lite-server -c bs-config.js",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "i18n": "ng-xi18n  --i18nFormat=xlf",
+    "i18n:aot:de": "ngc --i18nFile=./locale/messages.de.xlf --locale=de --i18nFormat=xlf -p tsconfig-aot.json && rollup -c rollup.config.js && node copy-dist-files.js && mv aot/dist/build.js aot/dist/build.de.js",
+    "i18n:aot:en": "ngc --i18nFile=./locale/messages.en.xlf --locale=en --i18nFormat=xlf -p tsconfig-aot.json && rollup -c rollup.config.js && node copy-dist-files.js && mv aot/dist/build.js aot/dist/build.en.js",
+    "i18n:aot:ru": "ngc --i18nFile=./locale/messages.ru.xlf --locale=ru --i18nFormat=xlf -p tsconfig-aot.json && rollup -c rollup.config.js && node copy-dist-files.js && mv aot/dist/build.js aot/dist/build.ru.js"
+  },
+  "repository": "github:ibqn/ng2-i18n-xlf.git",
+  "dependencies": {
+    "@angular/common": "^2.4.1",
+    "@angular/compiler": "^2.4.1",
+    "@angular/compiler-cli": "^2.4.1",
+    "@angular/core": "^2.4.1",
+    "@angular/forms": "^2.4.1",
+    "@angular/http": "^2.4.1",
+    "@angular/platform-browser": "^2.4.1",
+    "@angular/platform-browser-dynamic": "^2.4.1",
+    "@angular/platform-server": "^2.4.1",
+    "@angular/router": "^3.4.1",
+    "@angular/upgrade": "^2.4.1",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "^5.0.2",
+    "systemjs": "^0.19.41",
+    "zone.js": "^0.7.2"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.34",
+    "@types/node": "^6.0.53",
+    "concurrently": "^3.0.0",
+    "lite-server": "^2.2.2",
+    "rollup": "^0.38.0",
+    "rollup-plugin-commonjs": "^6.0.1",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "typescript": "~2.0.10"
+  }
+}
