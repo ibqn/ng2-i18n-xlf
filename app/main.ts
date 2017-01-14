@@ -6,6 +6,6 @@ import { AppModule } from './app.module';
 
 const platform = platformBrowserDynamic();
 
-getTranslationProviders().then(providers => {
+getTranslationProviders().then((providers: Object[]) => {
     platform.bootstrapModule(AppModule, { providers });
 });
