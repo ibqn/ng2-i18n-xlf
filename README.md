@@ -2,7 +2,7 @@
 Angular2 internalization (i18n) example with the XML Localization Interchange File Format (XLIFF, version 1.2).
 Both Just-in-Time (JIT) and Ahead-of-Time (AOT) compilation are supported.
 
-![](ng2-i18n.png?raw=true | width=100)
+![](ng2-i18n.png?raw=true)
 
 
 ## Getting started with Just-in-Time (JIT)
